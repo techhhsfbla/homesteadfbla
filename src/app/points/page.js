@@ -35,7 +35,7 @@ export default function PointsPage() {
   const fetchUsedCodes = async () => {
     if (user) {
       const db = getFirestore();
-      const userRef = doc(db, 'activityPoints2026', user.uid);
+      const userRef = doc(db, 'activityPoints2027', user.uid);
       const writtenUserRef = doc(db, 'writtenActivityPoints', user.uid);
       const userData = doc(db, 'users', user.displayName);
       const userDataSnap = await getDoc(userData);
@@ -60,7 +60,7 @@ export default function PointsPage() {
     const pointCodesSnapshot = await getDoc(pointCodesCollection);
     if (pointCodesSnapshot.exists()) {
       const codesData = pointCodesSnapshot.data();
-      setPointCodes(codesData.codes2026);
+      setPointCodes(codesData.codes);
       setWrittenPointCodes(codesData.writtenCodes);
       setPermanentCodes(codesData.permanentCodes);
     }
@@ -117,7 +117,7 @@ export default function PointsPage() {
     if (user) {
       const db = getFirestore();
       const userRef = pointType === 'regular'
-        ? doc(db, 'activityPoints2026', user.uid)
+        ? doc(db, 'activityPoints2027', user.uid)
         : doc(db, 'writtenActivityPoints', user.uid);
 
       try {
@@ -127,7 +127,7 @@ export default function PointsPage() {
           if (!userSnap.exists()) {
             transaction.set(userRef, {
               name: user.displayName,
-              activityPoints2026: 0,
+              activityPoints2027: 0,
               usedCodes: [],
               email: user.email,
             });
@@ -140,7 +140,7 @@ export default function PointsPage() {
           }
 
           transaction.update(userRef, {
-            activityPoints2026: increment(pointsValue),
+            activityPoints2027: increment(pointsValue),
             usedCodes: [...usedCodes, secretCode],
           });
 
