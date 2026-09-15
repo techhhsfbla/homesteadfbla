@@ -60,7 +60,7 @@ export default function PointsPage() {
     const pointCodesSnapshot = await getDoc(pointCodesCollection);
     if (pointCodesSnapshot.exists()) {
       const codesData = pointCodesSnapshot.data();
-      setPointCodes(codesData.codes2026);
+      setPointCodes(codesData.codes);
       setWrittenPointCodes(codesData.writtenCodes);
       setPermanentCodes(codesData.permanentCodes);
     }
