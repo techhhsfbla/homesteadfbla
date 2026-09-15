@@ -25,10 +25,10 @@ const ProfileCard = () => {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   const milestones = [
-    { name: 'Bronze Member', points: 10, color: '#CD7F32', prize: 'Candy' },
+    { name: 'Bronze Member', points: 10, color: '#CD7F32', prize: 'None'},
     { name: 'Silver Member', points: 25, color: '#A8A8A8', prize: 'Top Member Party *Applies to First Semester*' },
-    { name: 'Gold Member', points: 40, color: '#E5E4E2', prize: 'Choose room at SLC' },
-    { name: 'Diamond Member', points: 50, color: '#00BFFF', prize: 'Choose room at NLC' }
+    { name: 'Gold Member', points: 40, color: '#E5E4E2', prize: 'Choose SLC bus' },
+    { name: 'Diamond Member', points: 50, color: '#00BFFF', prize: '???' }
   ];
 
   useEffect(() => {
