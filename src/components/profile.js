@@ -54,11 +54,11 @@ const ProfileCard = () => {
     if (!user) return;
     const db = getFirestore();
     const allUsersSnapshot = await getDocs(
-      query(collection(db, 'activityPoints2026'), orderBy('activityPoints2026', 'desc'))
+      query(collection(db, 'activityPoints2027'), orderBy('activityPoints2027', 'desc'))
     );
     const allUsers = allUsersSnapshot.docs.map(doc => ({
       name: doc.data().name,
-      activityPoints: doc.data().activityPoints2026,
+      activityPoints: doc.data().activityPoints2027,
       email: doc.data().email
     }));
     setLeaderboardData(allUsers);
@@ -80,9 +80,9 @@ const ProfileCard = () => {
       if (!user) return;
       const db = getFirestore();
       const pointsSnapshot = await getDocs(
-        query(collection(db, 'activityPoints2026'), where('email', '==', user.email))
+        query(collection(db, 'activityPoints2027'), where('email', '==', user.email))
       );
-      if (!pointsSnapshot.empty) setUserPoints(pointsSnapshot.docs[0].data().activityPoints2026 || 0);
+      if (!pointsSnapshot.empty) setUserPoints(pointsSnapshot.docs[0].data().activityPoints2027 || 0);
     };
     fetchUserPoints();
   }, [user]);
