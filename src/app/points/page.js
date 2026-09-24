@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { QRCodeCanvas } from 'qrcode.react';
 import { getFirestore, doc, updateDoc, getDoc, setDoc, increment, runTransaction } from 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
@@ -29,8 +30,37 @@ export default function PointsPage() {
   const [showCodes, setShowCodes] = useState(false);
   const [selectedPointType, setSelectedPointType] = useState('');
   const [pointsValue, setPointsValue] = useState(0);
+  const [qrTarget, setQrTarget] = useState(null);
+  const [loginHref, setLoginHref] = useState('/login');
+  const qrContainerRef = useRef(null);
 
   const GM_CODES = ['GM1-0w4h', 'GM2-NF7k', 'GM3-IaZk'];
+  // Oldest code is retired once more than this many are active. Temporarily raised from 4 to 8.
+  const MAX_ACTIVE_CODES = 8;
+
+  // Prefill the code (and point type) when arriving from a QR code link, e.g. /points?code=GM1-aB3x&type=regular
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const type = params.get('type');
+    if (code) {
+      setSecretCode(code);
+      setLoginHref(`/login?redirect=${encodeURIComponent(window.location.pathname + window.location.search)}`);
+    }
+    if (type === 'regular' || type === 'written') setPointType(type);
+  }, []);
+
+  const buildCodeUrl = (code, type) =>
+    `${window.location.origin}/points?code=${encodeURIComponent(code)}&type=${type}`;
+
+  const downloadQrCode = () => {
+    const canvas = qrContainerRef.current?.querySelector('canvas');
+    if (!canvas || !qrTarget) return;
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = `${qrTarget.code}.png`;
+    link.click();
+  };
 
   const fetchUsedCodes = async () => {
     if (user) {
@@ -227,14 +257,14 @@ export default function PointsPage() {
         writtenCurrentCodes.push({ code: combinedCode, points: pointsValue });
       }
 
-      if (pointType === 'regular' && currentCodes.length > 4) {
+      if (pointType === 'regular' && currentCodes.length > MAX_ACTIVE_CODES) {
         const removedCode = currentCodes.shift();
         const pastCodesRef = doc(db, 'pointCodes', 'Past Codes (Do not use again)');
         const pastCodesSnap = await getDoc(pastCodesRef);
         let pastCodes = pastCodesSnap.exists() ? pastCodesSnap.data()["past codes"] : [];
         pastCodes.push(removedCode.code);
         await setDoc(pastCodesRef, { "past codes": pastCodes }, { merge: true });
-      } else if (writtenCurrentCodes.length > 4) {
+      } else if (writtenCurrentCodes.length > MAX_ACTIVE_CODES) {
         const removedCode = writtenCurrentCodes.shift();
         const pastCodesRef = doc(db, 'pointCodes', 'Past Codes (Do not use again)');
         const pastCodesSnap = await getDoc(pastCodesRef);
@@ -245,6 +275,7 @@ export default function PointsPage() {
 
       await setDoc(pointCodesRef, { codes: currentCodes, writtenCodes: writtenCurrentCodes, permanentCodes: permanentCodes }, { merge: true });
       setGeneratedCode(combinedCode);
+      setQrTarget({ code: combinedCode, type: selectedPointType === 'permanent' ? 'regular' : pointType });
       setErrorMessage('');
     } catch (e) {
       setErrorMessage(`Error occurred: ${e.message}`);
@@ -255,6 +286,17 @@ export default function PointsPage() {
 
   const togglePastCodes = () => setShowPastCodes(!showPastCodes);
   const toggleCodesVisibility = () => setShowCodes(!showCodes);
+
+  const renderCodeItem = (code, type, index) => (
+    <li key={index} className="flex justify-between items-center py-1">
+      <span>{code}</span>
+      <button
+        onClick={() => setQrTarget({ code, type })}
+        className="ml-2 px-2 py-0.5 text-sm bg-watermelon-red/75 rounded hover:bg-watermelon-red/90 duration-150">
+        QR
+      </button>
+    </li>
+  );
 
   return (
     <>
@@ -271,7 +313,7 @@ export default function PointsPage() {
             <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Get Activity Points!</h1>
             {!codeVerified ? (
               <div className="flex flex-col items-center space-y-4 w-full">
-                <select onChange={(e) => setPointType(e.target.value)} className="border p-2 rounded text-black w-full bg-red-100/90">
+                <select value={pointType} onChange={(e) => setPointType(e.target.value)} className="border p-2 rounded text-black w-full bg-red-100/90">
                   <option value="regular">Regular Meeting Points</option>
                   <option value="written">Written Competitor Points</option>
                 </select>
@@ -357,6 +399,25 @@ export default function PointsPage() {
                   {generatedCode && (
                     <p className="text-white mt-2 flex flex-col">New code generated: <strong>{generatedCode}</strong></p>
                   )}
+                  {qrTarget && (
+                    <div className="flex flex-col items-center space-y-3 w-full">
+                      <div ref={qrContainerRef} className="bg-white p-2 rounded-lg">
+                        <QRCodeCanvas
+                          value={buildCodeUrl(qrTarget.code, qrTarget.type)}
+                          size={512}
+                          marginSize={2}
+                          style={{ width: 200, height: 200 }}
+                        />
+                      </div>
+                      <p className="text-white text-sm">QR code for <strong>{qrTarget.code}</strong></p>
+                      <button
+                        onClick={downloadQrCode}
+                        className="p-2 bg-red-violet text-white rounded w-full shadow-lg hover:scale-105
+                        hover:brightness-105 duration-150">
+                        Download QR Code
+                      </button>
+                    </div>
+                  )}
                   <button 
                     onClick={toggleCodesVisibility}
                     className="p-2 bg-red-violet text-white rounded w-full shadow-lg hover:scale-105 hover:brightness-105 duration-150 mt-4">
@@ -365,13 +426,13 @@ export default function PointsPage() {
                   {showCodes && (
                     <div className="text-white mt-4 w-full">
                       <h2 className="text-lg font-bold">Regular Codes:</h2>
-                      <ul className="list-disc pl-4">{pointCodes.map((code, index) => <li key={index}>{code.code}</li>)}</ul>
+                      <ul className="list-disc pl-4">{pointCodes.map((code, index) => renderCodeItem(code.code, "regular", index))}</ul>
                       <hr className="border-t border-watermelon-red/60 my-4 w-full" />
                       <h2 className="text-lg font-bold">Permanent Activity Codes:</h2>
-                      <ul className="list-disc pl-4">{permanentCodes.map((code, index) => <li key={index}>{code.code}</li>)}</ul>
+                      <ul className="list-disc pl-4">{permanentCodes.map((code, index) => renderCodeItem(code.code, "regular", index))}</ul>
                       <hr className="border-t border-watermelon-red/60 my-4 w-full" />
                       <h2 className="text-lg font-bold">Written Competitor Codes:</h2>
-                      <ul className="list-disc pl-4">{writtenPointCodes.map((code, index) => <li key={index}>{code.code}</li>)}</ul>
+                      <ul className="list-disc pl-4">{writtenPointCodes.map((code, index) => renderCodeItem(code.code, "written", index))}</ul>
                     </div>
                   )}
                 </div>
@@ -385,7 +446,7 @@ export default function PointsPage() {
           <div className="container flex flex-col items-center mx-auto p-6 bg-red-violet/60 rounded-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3 border-2 border-watermelon-red/40 shadow-2xl text-3xl">
              <p>You are not logged in. Please login to get Activity Points!</p>
             <Link
-              href="./login"
+              href={loginHref}
               className="border-2 border-watermelon-red hover:bg-watermelon-red ease-linear duration-200 cursor-pointer w-fit p-3 text-xl rounded-xl mt-8"
             >
               Go to Login Page

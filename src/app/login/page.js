@@ -23,8 +23,10 @@ const LoginPage = () => {
         const userDoc = await checkIfUser(user);
         if (userDoc) {
           console.log('User authenticated and found:', userDoc);
-          // Redirect to home screen
-          window.location.href = '/';
+          // Redirect back to where the user came from (e.g. a QR code link), otherwise home
+          const redirect = new URLSearchParams(window.location.search).get('redirect');
+          const isSafeRedirect = redirect && redirect.startsWith('/') && !redirect.startsWith('//');
+          window.location.href = isSafeRedirect ? redirect : '/';
         } else {
           console.log('User not found in database.');
           // Optionally sign out user if not found in the database

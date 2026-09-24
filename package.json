@@ -25,6 +25,7 @@
     "lodash": "^4.17.21",
     "next": "^14.0.3",
     "nodemailer": "^6.9.15",
+    "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
