@@ -17,7 +17,7 @@ let mentors = [
         name : "Sufee Kathane",
         type : "Student",
         competitions : "Customer Service, Introduction to Business Procedures, Supply Chain Strategy",
-        desc : "Hello everyone! I'm Sufee Kathane. I'm happy to mentor for both of my competitions which I represented at Nationals, Introduction to Business Procedures & Supply Chain Management, and an individual case study as the previous VP of Case Studies. If you ever have any questions about the types of competitions (minus tech!), feel free to chat!",
+        desc : "Hello everyone! I'm Sufee Kathane. I'm happy to mentor for both of my competitions which I represented at Nationals. If you ever have any questions about the types of competitions (minus tech!), feel free to chat!",
         image : "SufeeK"
     },
     {
