@@ -66,7 +66,7 @@ let mentors = [
         name : "Aayati Vijayakar",
         type : "Officer",
         competitions : "Introduction to Marketing Concepts, Retail Management",
-        desc : "Hey guys, I'm Aayati and I'm one of your Community Service project chairs this year! In my free time, I love to read, bake, and play field hockey. I'm excited to get to know everyone throughout the year, and make sure to join the CS project! Feel free to reach out to me if you have any questions :)",
+        desc : "Hey guys, I'm Aayati and I'm one of your Community Service project chairs this year! Can't wait to meet everyone!",
         image : "AayatiV"
     },
     {
