@@ -1,241 +1,199 @@
 let mentors = [
     {
+        name : "Mishti Doshi",
+        type : "Student",
+        competitions : "Website Design",
+        desc : "Hi! I'm Mishti, a junior, and I placed at nationals for Website Design last year. I enjoy reading, playing video games, and doing archery. Looking forward to mentoring!",
+        image : "MishtiD"
+    },
+    {
+        name : "Erica Knapp",
+        type : "Student",
+        competitions : "Business Ethics",
+        desc : "Hello! I'm Erica and I'm so excited to be a mentor for Business Ethics this year! I loved competing last year with my team, working on script edits and run-throughs together, and stressing before competing. Enjoy everything from eating food to writing, and to doing impromptou Q&A!",
+        image : "EricaK"
+    },
+    {
+        name : "Sufee Kathane",
+        type : "Student",
+        competitions : "Customer Service, Introduction to Business Procedures, Supply Chain Strategy",
+        desc : "Hello everyone! I'm Sufee Kathane. I'm happy to mentor for both of my competitions which I represented at Nationals, Introduction to Business Procedures & Supply Chain Management, and an individual case study as the previous VP of Case Studies. If you ever have any questions about the types of competitions (minus tech!), feel free to chat!",
+        image : "SufeeK"
+    },
+    {
+        name : "Bourne He",
+        type : "Student",
+        competitions : "Securities & Investments",
+        desc : " ",
+        image : "default"
+    },
+    {
+        name : "Jack Greanias",
+        type : "Student",
+        competitions : "Sales Presentation",
+        desc : "My name is Jack, I do FBLA and I like to eat",
+        image : "JackG"
+    },
+    {
+        name : "Anna Silveira",
+        type : "Student",
+        competitions : "Public speaking, Hospitality and Event Management, Customer Service",
+        desc : "I have been part of FBLA since I was a freshman and I'm excited to mentor again this year. I love any performance/speaking event, feel free to ask me for feedback!",
+        image : "AnnaS"
+    },
+    {
+        name : "James Pablo",
+        type : "Student",
+        competitions : "Business Management, Sports and Entertainment Management",
+        desc : "I like to read and write, feel free to talk to me about anything!  I do things for the love of the game",
+        image : "default"
+    },
+    {
+        name : "Anushka Raghuram",
+        type : "Student",
+        competitions : "Introduction to Business Presentation, Introduction to FBLA",
+        desc : "Hi! My name is Anushka Raghuram, and I am a sophomore. I love both speaking and written competitions and can’t wait to work with you all this year!",
+        image : "AnushkaR"
+    },
+    {
+        name : "Tharun Parthasarathy",
+        type : "Officer",
+        competitions : "Introduction to Retail & Merchandising, Project Management",
+        desc : "Hey everyone, I'm Tharun and I'm one of your Community Service chairs for this year. I like to read, hike, and hangout with my friends. Looking forward to seeing you all at the CS project meetings!",
+        image : "Tharun"
+    },
+    {
+        name : "Aayati Vijayakar",
+        type : "Officer",
+        competitions : "Introduction to Marketing Concepts, Retail Management",
+        desc : "Hey guys, I'm Aayati and I'm one of your Community Service project chairs this year! In my free time, I love to read, bake, and play field hockey. I'm excited to get to know everyone throughout the year, and make sure to join the CS project! Feel free to reach out to me if you have any questions :)",
+        image : "AayatiV"
+    },
+    {
+        name : "Maya Sato",
+        type : "Officer",
+        competitions : "Introduction to Business Concepts",
+        desc : "Hey guys, I'm Maya and I'm a PwB chair this year. Can't wait to meet you all!",
+        image : "MayaS"
+    },
+    {
+        name : "Michelle Chin",
+        type : "Officer",
+        competitions : "Computer Applications, Digital Video Production",
+        desc : "Hi everyone, I'm Michelle and I'm a SV chair this year. Can't wait to meet you all!",
+        image : "MichelleC"
+    },
+    {
+        name : "Dhanya Ganti",
+        type : "Officer",
+        competitions : "Introduction to Social Media Strategy, Digital Animation, Graphic Design",
+        desc : "Hi guys! I'm Dhanya, and I'm excited to be one of your Middle Level Chairs this year! I love dance, traveling, shopping, trying new foods, and hanging out with my friends! If you see me on campus, feel free to stop by and say hi :) Looking forward to a great year, and I can't wait to meet you all!",
+        image : "DhanyaG"
+    },
+    {
+        name : "Shourya Batra",
+        type : "Officer",
+        competitions : "Data Science & AI, Career Portfolio, Data Analysis, Website Coding & Development",
+        desc : "Hi guys, I'm Shourya, one of the tech chairs this year! In my free time, I like to go outside, play volleyball, listen to music, and code. I'm looking forward to a great year, and make sure to pull up to Software Ventures!",
+        image : "Shourya"
+    },
+     {
+        name : "Caleb Swineford",
+        type : "Officer",
+        competitions : "Financial Planning, Financial Statement Analysis",
+        desc : "Hi guys, I'm Alessandro and I'll be serving as your EVP of Conferences this year! For fun I love playing pickleball, scrolling my fyp, and trying new foods! Please hit me up anytime about anything, I'm always open to talking :))",
+        image : "Alessandro"
+    },
+    {
         name : "Alessandro Montesi",
         type : "Officer",
-        competitions : "Computer Problem Solving, Introduction to Information Technology, Network Infrastructure",
-        desc : "Hi guys, I'm Alessandro and I am mentoring a few tech comps this year. Can't wait to meet y'all!",
-        image : "AlessandroM"
-    },
-    {
-        name : "Arhan Chakravarthy",
-        type : "Officer",
-        competitions : "Website Coding and Development, Introduction to Business Concepts, Computer Problem Solving",
-        desc : "Hey guys, my name is Arhan and I am a CS chair this year. I love both business and tech, and I can't wait to work with you guys— trust, I will be a good mentor!!",
-        image : "ArhanC"
-    },
-    {
-        name : "Serena Fanse",
-        type : "Officer",
-        competitions : "Business Ethics, Introduction to Social Media Strategies",
-        desc : "Hi Everyone! My name is Serena and I am currently a sophomore. Some fun facts about me are that I like to read and listen to music.",
-        image : "SerenaF"
-    },
-    {
-        name : "Neil Verma",
-        type : "Student",
-        competitions : "Advertising, Introduction to Marketing Concepts, Public Service Announcement",
-        desc : "Hola! I'm Neil, and some of my favorite things to do are eating any sort of food, making fun of Smyan's height, and going down rabbit holes on Wikipedia. If you can't find me, I'm probably leaking classified documents.",
-        image : "NeilV"
-    },
-    {
-        name : "Naaga Senthil ",
-        type : "Student",
-        competitions : "Introduction to Marketing Concepts",
-        desc : "Hi! My name is Naaga Senthil and I'm a junior. I'm looking forward to being a mentor for FBLA. Aside from FBLA, I am part of the school badminton team and in my free time, I enjoy traveling, listening to music and drinking boba.",
-        image : "NaagaS"
-    },
-    {
-        name : "Vincent Wang",
-        type : "Officer",
-        competitions : "Intro to Business Concepts, Intro to Business Presentation, Intro to Parli Pro, Intro to Public Speaking",
-        desc : "Placeholder",
-        image : "VincentW"
-    },
-    {
-        name : "Rohan Bedekar",
-        type : "Student",
-        competitions : "Introduction to Public Speaking",
-        desc : "Hello, my name is Rohan Bedekar, and I am a junior at Homestead High School who loves public speaking and presenting in front of many people. This liking is the reason why I chose to be a mentor for the next Introduction to Public Speaking competitor, and I look forward to guiding them all the way to Nationals!",
-        image : "RohanB"
-    },
-    {
-        name : "Ian Yoon",
-        type : "Officer",
-        competitions : "Entrepreneurship, Intro to Biz Prez",
-        desc : "Hello, I am a current senior at homestead. I’ve competed in FBLA since freshman year and qualified to be a national finalist every year. I look forward to working with you all!",
-        image : "IanY"
-    },
-    {
-        name : "Samik Thakur",
-        type : "Officer",
-        competitions : "Financial Statement Analysis, Securities & Investments",
-        desc : "Hi everyone, I’m Samik Thakur and along with being a Community Service Project Chair this year, I am also mentoring Financial Statement Analysis and Securities & Investments. I enjoy playing soccer and listening to music in my free time. ",
-        image : "SamikT"
-    },
-    {
-        name : "Bharath Jayadev",
-        type : "Student",
-        competitions : "Network Design",
-        desc : "Hi my name is Bharath and I competed in Network Design in 2023-2024. In my free time I enjoy cooking and hanging out with my friends. ",
-        image : "BharathJ"
-    },
-    {
-        name : "Ethan Hoey",
-        type : "Student",
-        competitions : "Introduction to Event Planning",
-        desc : "My name is Ethan and I'm currently a sophomore. I like playing basketball, swimming, baking and listening to music.",
-        image : "EthanH"
-    },
-    {
-        name : "Claire Xu",
-        type : "Student",
-        competitions : "Introduction to Business Procedures",
-        desc : "Hii, my name is Claire. I love art, tennis, movies, roller coasters, and strawberries!",
-        image : "default"
+        competitions : "Computer Game & Simulation Programming, Website Coding & Development, Network Infrastructure",
+        desc : "Hi guys, I'm Alessandro and I'll be serving as your EVP of Conferences this year! For fun I love playing pickleball, scrolling my fyp, and trying new foods! Please hit me up anytime about anything, I'm always open to talking :))",
+        image : "Alessandro"
     },
     {
         name : "Sravika Nemani",
         type : "Officer",
-        competitions : "Agribusiness, Business Plan, Introduction to FBLA",
-        desc : "Hi everyone I’m Sravika and I am so excited to be a mentor this year! Outside of mentoring, I am an American Enterprise project chair. ",
-        image : "default"
+        competitions : "Public Speaking, Public Service Announcement",
+        desc : "What is up everyone?! I'm Sravika and I am the Development Associate. I love binge watching shows, finding new musical to listen to, and trying new food spots with my friends. I'm so excited to meet everyone and if you see me say hi!!",
+        image : "Sravika"
     },
     {
-        name : "Noah Graff",
-        type : "Student",
-        competitions : "Accounting 1",
-        desc : "My name is Noah, I'm a junior and this is my second year competing in FBLA. Last year I made it to Nationals for Accounting 1 and now it's my goal to help others reach Nationals as well. ",
-        image : "NoahG"
-    },
-    {
-        name : "Perennial Ong   ",
-        type : "Student",
-        competitions : "Introduction to Business Presentation",
-        desc : "Hello! My name is Perennial and I was in Introduction to Business Presentation last year. I’m looking forward to mentoring!😗😗😋 ",
-        image : "default"
-    },
-    {
-        name : "Madison Palermo",
-        type : "Student",
-        competitions : "Journalism",
-        desc : "My name is Madison and I am looking forward to mentoring for journalism this year. In my free time, I enjoy playing volleyball, reading, and hanging out with friends. ",
-        image : "default"
-    },
-    {
-        name : "Sophie Xing",
-        type : "Student",
-        competitions : "Accounting I",
-        desc : "Hi FBLA, I'm Sophie and I'm looking forward to sharing some of my tips and tricks so you can ace your accounting comp! Some fun facts: I'm ambidextrous and interested in all sorts of things: travel, all things vintage, dance (I do jazz and ballet), art, fitness, self-improvement, and investing/personal finance. ",
-        image : "default"
-    },
-    {
-        name : "Noah Sato",
+        name : "Serena Fanse",
         type : "Officer",
-        competitions : "Introduction to Public Speaking, Securities and Investment",
-        desc : "Hey everyone! My name is Noah Sato. In my free time I enjoy playing tennis and golf, alongside hanging out with my friends. I have been a part of FBLA since my sophomore year and I'm really excited for the upcoming year!",
-        image : "NoahS"
-    },
-    {
-        name : "Aayushma Adhikari",
-        type : "Officer",
-        competitions : "Business Ethics, Healthcare Administration",
-        desc : "Hello! My name is Aayushma Adhikari, and I’m a senior with 5 years of experience in FBLA. I’m really excited to meet all of you and to share what I’ve learned through competitions. I can’t wait to help you grow your skills and make the most of your FBLA journey!",
-        image : "AayushmaA"
-    },
-    {
-        name : "Eric Ko",
-        type : "Officer",
-        competitions : "Future Business Educator",
-        desc : "Hey all! I’m Eric, and this is my 6th year of doing FBLA. I’m excited to meet all new competitors this year and help you succeed at NLC!",
-        image : "EricK"
-    },
-    {
-        name : "Aaron Huang",
-        type : "Officer",
-        competitions : "Mobile Application Development, Cyber Security ",
-        desc : "I love tennis and life. Excited to mentor all these competitions",
-        image : "AaronH"
-    },
-    {
-        name : "Jemma Yang",
-        type : "Student",
-        competitions : "Broadcast Journalism",
-        desc : "(hi, I'm jemma!) I competed in Broadcast Journalism last year, and my favorite part of FBLA was working with my team and all the fun adventures of Bay Section, States, and Nationals. A fun fact about me is that I love baking and photography :)",
-        image : "JemmaY"
-    },
-    {
-        name : "Anoushka Rathi",
-        type : "Student",
-        competitions : "Introduction to Business Concepts",
-        desc : "Hey! I'm Anoushka and my previous comps were Intro to Biz Concepts and Website Design. Outside of school, I like to dance, play soccer, and travel.",
-        image : "default"
+        competitions : "Business Plan, Introduction to Public Speaking, Social Media Strategies",
+        desc : "Hello everyone! My name is Serena and I'm incredibly excited to serve as your President this year! I love reading, listening to music, and hanging out with my friends. If you ever need anything, please don’t hesitate to reach out. I’m looking forward to meeting you all!",
+        image : "Serena"
     },
     {
         name : "Leah Pien",
         type : "Officer",
-        competitions : "Introduction to Business Presentation",
-        desc : "Hello everyone! I'm Leah, and I am currently a sophomore. Some fun facts about me are that I love to play tennis, ski, and get boba with my friends!",
-        image : "default"
+        competitions : "Broadcast Journalism, Introduction to Business Presentation",
+        desc : "Hey everyone, my name is Leah and I'll be serving as your EVP of Development this year!! I love playing tennis, traveling, and going to photobooths with my friends. I also love trying out new cafes! If you have any questions, please feel free to reach out!!",
+        image : "Leah"
     },
     {
-        name : "Dorie Lee",
+        name : "Sojin Kim",
         type : "Officer",
-        competitions : "Social Media Strategies",
-        desc : "Hey! My name is Dorie and this is my third year in FBLA. So excited to meet you all and see you grow as competitiors!",
-        image : "DorieL"
+        competitions : "Human Resource Management, Healthcare Administration, Graphic Design",
+        desc : "hey everyone! i’m super excited to mentor these comps this year! looking forward to meeting all of you :)",
+        image : "SojinK"
     },
     {
-        name : "Anjay Parthasarathy",
+        name : "Vineet Saraf",
         type : "Officer",
-        competitions : "Introduction to Event Planning",
-        desc : "I'm Anjay, and I love to go on rollercoasters and talk with my friends! I also love to go on adventures and especially love to try new things--whether it be food or other activities.",
-        image : "AnjayP"
+        competitions : "Marketing, Sports & Entertainment Management",
+        desc : "Hey guys, I'm Vineet and I'm your Treasurer. I love to play pickleball, hangout with my dog, and bake. Feel free to hit me up if you have any questions!",
+        image : "Vineet"
     },
     {
-        name : "Meredith Tan",
-        type : "Student",
-        competitions : "Agribusiness, Hospitality & Event Management, Introduction to Event Planning",
-        desc : "Hey everyone! My name is Meredith and I'm so excited to be a mentor this year! Previously, I've competed in Intro to EP and Hosp. A fun fact about me is that I'm a volleyball player, retired pianist, and baker :D",
-        image : "MeredithT"
-    },
-    {
-        name : "Varun Narayanan",
+        name : "Arhan Chakravarthy",
         type : "Officer",
-        competitions : "Economics",
-        desc : "Hi all! I'm Varun and I am pumped to be a mentor this year. I have been a part of FBLA for 3 years and I am currently serving as a Vice President of Speaking Competitions. Looking forward to meeting everyone!",
-        image : "VarunN"
+        competitions : "Accounting",
+        desc : "Hey guys, I'm Arhan and I'm really looking forward to being this years Education Programs Coordinator! During my free time I love playing all racket sports, watching random shows, and of course watching reels. If you ever see me never be afraid to say hi, and I look forward to meeting y'all!",
+        image : "Arhan"
     },
     {
-        name : "Sanvi Joshi",
-        type : "Student",
-        competitions : "Business Communications, Sales Presentation",
-        desc : "Hi, I'm Sanvi and I like traveling, reading, and watching movies with friends. I also spend most of my time listening to music.",
-        image : "SanviJ"
-    },
-    {
-        name : "Simran Soni",
-        type : "Student",
-        competitions : "Introduction to Financial Math",
-        desc : "Hi everyone! I'm Simran and I'm excited to be your mentor this year. In my free time I play squash, crochet, and hanging out with friends.",
-        image : "default"
-    },
-    {
-        name : "Armaan Malkani",
-        type : "Student",
-        competitions : "Networking Design",
-        desc : "Hi I’m armaan. I love to play tennis and travel. ",
-        image : "default"
-    },
-    {
-        name : "Jane Ser",
+        name : "Sara Ridder",
         type : "Officer",
-        competitions : "Business Communication, Introduction to Business Communication",
-        desc : "Jane is a current junior at Homestead, and the Vice President of Case Competitions this year. She likes to listen to music and read.",
-        image : "JaneS"
+        competitions : "Introduction to Public Speaking, International Business",
+        desc : "Hi everyone! I'm Sara and I'm excited to be one of your ML Chairs this year! I love reading, volleyball, listening to music, and binge-watching TV in my free time. I'm always open to recommendations so if you see me on campus feel free to say hi. I look forward to working with everyone and an exciting year! ",
+        image : "Sara"
     },
     {
-        name : "Madhumitha Balaji",
-        type : "Student",
-        competitions : "Organizational Leadership",
-        desc : "HI! I'm Madhumitha Balaji and I am a senior. In my free time, I love making pipe cleaner crafts and card games.",
-        image : "default"
-    },    
+        name : "Dhriti Ganesh",
+        type : "Officer",
+        competitions : "Introduction to Business Presentation, Job Interview",
+        desc : "Hey everyone, I'm Dhriti and I'm serving as your Vice President of Written Comps this year! In my free time, I love spending time with my friends, family, and going window shopping. Can't wait to work with all of you this upcoming school year :)",
+        image : "Dhriti"
+    },
     {
-        name : "Sufee Kathane",
-        type : "Student",
-        competitions : "Introduction to Business Procedures",
-        desc : "Placeholder",
-        image : "SufeeK"
+        name : "Jolene Luong",
+        type : "Officer",
+        competitions : "Introduction to Social Media Strategy, Organizational Leadership",
+        desc : "Hey everyone, Im Jolene and I'm serving as your member relations chair this year! I love hanging out with my friends and traveling! Looking forward to meeting everyone this year!",
+        image : "Jolene"
+    },
+    {
+        name : "Amol Agrawal",
+        type : "Officer",
+        competitions : "Computer Problem Solving",
+        desc : "Yo my name is Amol and ill be serving as your VP of Tech for this year.  In my free time, I like to play sports, go to the gym, game, and hang out with friends. If you guys have any questions, just let me know, as I would love to get to know you all. I can't wait to have another successful year! ",
+        image : "AmolA"
+    },
+    {
+        name : "Gulnar Zamindar",
+        type : "Officer",
+        competitions : "Business Plan",
+        desc : "Hi my name is Gulnar Zamindar and I am so excited to be your professional development chair this year! Some of my favorite hobbies are singing, acting, badminton, and going on walks. Another fun fact about me is that I have a cat! I'm so excited to meet you all this year, so don't hesitate to come up to me if you ever have any questions or just want to say hi!",
+        image : "Gulnar"
+    },
+    {
+        name : "Advay Ranade",
+        type : "Officer",
+        competitions : "Economics, Journalism, Public Administration and Management, Real Estate",
+        desc : "Hey guys, I'm Advay and I'm excited to serve as your Vice President of Prepared Speaking Competitions for this competitive season. In my free time, I like to swim and love to watch TV shows. Let me know if you have any questions or show recommendations for me because I would love to talk to you!  Looking forward to working with everyone this year!",
+        image : "Advay"
     },
 ]
 
