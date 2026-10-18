@@ -102,7 +102,7 @@ let mentors = [
         type : "Officer",
         competitions : "Financial Planning, Financial Statement Analysis",
         desc : "Hi guys, I'm Alessandro and I'll be serving as your EVP of Conferences this year! For fun I love playing pickleball, scrolling my fyp, and trying new foods! Please hit me up anytime about anything, I'm always open to talking :))",
-        image : "Alessandro"
+        image : "CalebS"
     },
     {
         name : "Alessandro Montesi",
