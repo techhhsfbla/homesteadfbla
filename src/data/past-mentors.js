@@ -1,4 +1,4 @@
-let past-mentors = [
+let pastMentors = [
     {
         name : "Alessandro Montesi",
         type : "Officer",
@@ -240,4 +240,4 @@ let past-mentors = [
 ]
 
 
-export default mentors;
+export default pastMentors;
