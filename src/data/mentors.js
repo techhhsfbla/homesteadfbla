@@ -87,7 +87,7 @@ let mentors = [
         name : "Dhanya Ganti",
         type : "Officer",
         competitions : "Introduction to Social Media Strategy, Digital Animation, Graphic Design",
-        desc : "Hi guys! I'm Dhanya, and I'm excited to be one of your Middle Level Chairs this year! I love dance, traveling, shopping, trying new foods, and hanging out with my friends! If you see me on campus, feel free to stop by and say hi :) Looking forward to a great year, and I can't wait to meet you all!",
+        desc : "Hi guys! I'm Dhanya, and I'm a ML chair this year. Can't wait to meet everyone!",
         image : "DhanyaG"
     },
     {
@@ -101,7 +101,7 @@ let mentors = [
         name : "Caleb Swineford",
         type : "Officer",
         competitions : "Financial Planning, Financial Statement Analysis",
-        desc : "Hi guys, I'm Alessandro and I'll be serving as your EVP of Conferences this year! For fun I love playing pickleball, scrolling my fyp, and trying new foods! Please hit me up anytime about anything, I'm always open to talking :))",
+        desc : "Hey everyone, my name is Caleb Swineford and I'm one of your Partnership with Business chairs for this school year. I love golfing, hanging out with friends and traveling, especially to Korea! If you have any recommendations on things to do there, please let me know - I'd love to try them! If you need anything, please feel free to reach out; I am looking forward to meeting everyone this year!",
         image : "Caleb"
     },
     {
