@@ -33,11 +33,11 @@ export default function CommunityService() {
         <h1 className="text-3xl font-bold">Community Service</h1>
         {user ? (
           <p className="mt-3 text-lg">
-            The Community Service Project is dedicated to creating a positive impact in our local area by taking on an issue and working toward a solution with project members.
+            This year’s CS project is focused on supporting underrepresented arts in the Bay Area! We want to raise appreciation for the arts while providing students more opportunities to be creative, through initiatives such as painting a mural at a local school, creating a short film on art and its importance, hosting a multi-media night at Homestead in collaboration with different art clubs on campus, and more! Make sure to follow our project Instagram, as well as our supplemental account where we feature interviews with local artists every week!
           </p>
         ) : (
           <p className="mt-3 text-lg">
-            The Community Service Project is dedicated to creating a positive impact in our local area by taking on an issue and working toward a solution with project members.
+            This year’s CS project is focused on supporting underrepresented arts in the Bay Area! We want to raise appreciation for the arts while providing students more opportunities to be creative, through initiatives such as painting a mural at a local school, creating a short film on art and its importance, hosting a multi-media night at Homestead in collaboration with different art clubs on campus, and more! Make sure to follow our project Instagram, as well as our supplemental account where we feature interviews with local artists every week!
           </p>
         )}
 
