@@ -39,8 +39,25 @@ export default function CommunityService() {
           <p className="mt-3 text-lg">
             This year’s CS project is focused on supporting underrepresented arts in the Bay Area! We want to raise appreciation for the arts while providing students more opportunities to be creative, through initiatives such as painting a mural at a local school, creating a short film on art and its importance, hosting a multi-media night at Homestead in collaboration with different art clubs on campus, and more! Make sure to follow our project Instagram, as well as our supplemental account where we feature interviews with local artists every week!
           </p>
+          
         )}
+        <div style ={{display: 'flex', gap: '20px', marginTop: '20px'}}>
+          <Image
+            src="/static/CS1.jpg"
+            alt=" "
+            width={550}
+            height={400}
+            style={{objectFit: 'cover'}}
+          />
 
+          <Image
+            src ="/static/CS2.jpg"
+            alt = " "
+            width={550}
+            height={400}
+            style={{objectFit:'cover'}}
+            />
+          </div>
       </div>
       <Footer />
     </>
